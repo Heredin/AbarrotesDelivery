@@ -19,10 +19,7 @@ class User extends Authenticatable
         'name', 'email','celular','direccion','estado','tipo', 'password',
     ];
 
-  //funcion que hace la relacion cone el modelo a relacionar
-  public function pedidos(){
-    return $this->belongsTo("App\Pedidos");
-}
+
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -35,4 +32,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+      //funcion que hace la relacion cone el modelo a relacionar
+  public function pedidos(){
+    return $this->belongsTo("App\Pedidos");
+}
+public function roles(){
+    return $this->belongsToMany("App\Role");
+}
+public function hasRole($role){
+   if($this->roles()->where('name',$role)->first()){
+       return true;
+   }
+   return false;
+}
 }

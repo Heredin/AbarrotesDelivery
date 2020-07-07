@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','FrontController@index');
+
 Route::group(['prefix'=>'admin','middleware'=>'role:admin'],function(){
     Route::resource('/usuarios','Admin\UsuariosController',['as'=>'admin']);
     Route::resource('/categorias','Admin\CategoriasController',['as'=>'admin']);

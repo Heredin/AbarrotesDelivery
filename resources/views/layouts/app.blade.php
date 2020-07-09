@@ -30,18 +30,13 @@
                     </ul>
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mx-auto">
+                       @forelse($menu as $r)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/inicio') }}">Inicio</a>
+                        <a class="nav-link" href="/{{$r->slug}}">{{$r->nombre}}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('') }}">Menú 1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('') }}">Menú 2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('') }}">Menú 3</a>
-                        </li>
+                        @empty
+                        @endforelse
+
 
                     </ul>
                     <!-- Right Side Of Navbar -->
@@ -79,14 +74,13 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
             @yield('content')
-        </main>
+            <div class="container-fluid text-center bg-warning pt-5 pb-5">
+                <p>&copy; Todos los derechos reservados</p>
     </div>
     <style>
         .bg-primary{
-            background: #340166 !important
+            background: #340166 !important;
         }
     </style>
 </body>

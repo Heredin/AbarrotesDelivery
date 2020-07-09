@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://media.istockphoto.com/photos/long-and-wide-panoramic-backgroundsold-grunge-gray-texture-with-picture-id1151387271" class="d-block w-100" alt="...">
+        <img src="https://previews.123rf.com/images/seamartini/seamartini1701/seamartini170100556/69602673-fruter%C3%ADa-tienda-o-mostrador-vitrina-soporte-del-mercado-con-la-cosecha-fresco-granja-de-frutas-y-bayas.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://media.istockphoto.com/photos/long-and-wide-panoramic-backgroundsold-grunge-gray-texture-with-picture-id1151387271" class="d-block w-100" alt="...">
+        <img src="https://pbs.twimg.com/media/C2nQxLDXAAIr06U.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://media.istockphoto.com/photos/long-and-wide-panoramic-backgroundsold-grunge-gray-texture-with-picture-id1151387271" class="d-block w-100" alt="...">
+        <img src="https://pbs.twimg.com/media/Cxc3jvTXAAAGqYC.jpg:large" class="d-block w-100" alt="...">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -21,9 +21,46 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-<div class="container">
+
+
+ <div class="container pb-5">
     <div class="row justify-content-center">
-        Portada
-    </div>
-</div>
+        <div class="col-sm-12 mt-5 m"><h1 class="text-center">Abarrotes Delivery</h1></div>
+        <div class="col-sm-4">
+            <div class="card shadow"></div>
+                <img src="https://previews.123rf.com/images/seamartini/seamartini1701/seamartini170100556/69602673-fruter%C3%ADa-tienda-o-mostrador-vitrina-soporte-del-mercado-con-la-cosecha-fresco-granja-de-frutas-y-bayas.jpg" class="card-img-top">
+            <div class="card-body">
+                Un nuevo negocio
+                <div class="card-footer">
+                    <a href="/" class="btn btn-outline-success rounded-pill btn-block">Producto</a>
+                </div>
+            </div>
+
+          </div>
+          <div class="col-sm-4">
+            <div class="card shadow"></div>
+                <img src="https://pbs.twimg.com/media/C2nQxLDXAAIr06U.jpg" class="card-img-top">
+            <div class="card-body">
+                Un nuevo negocio
+                <div class="card-footer">
+                    <a href="/" class="btn btn-outline-success rounded-pill btn-block">Producto</a>
+                </div>
+            </div>
+
+          </div>
+          <div class="col-sm-4">
+            <div class="card shadow"></div>
+                <img src="https://pbs.twimg.com/media/Cxc3jvTXAAAGqYC.jpg:large" class="card-img-top">
+            <div class="card-body">
+                Un nuevo negocio
+                <div class="card-footer">
+                    <a href="/" class="btn btn-outline-success rounded-pill btn-block">Producto</a>
+                </div>
+            </div>
+
+          </div>
+
+
+            </div>
+        </div>
 @endsection

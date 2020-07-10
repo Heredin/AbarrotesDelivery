@@ -2,15 +2,13 @@
 @section('content')
    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://previews.123rf.com/images/seamartini/seamartini1701/seamartini170100556/69602673-fruter%C3%ADa-tienda-o-mostrador-vitrina-soporte-del-mercado-con-la-cosecha-fresco-granja-de-frutas-y-bayas.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://pbs.twimg.com/media/C2nQxLDXAAIr06U.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://pbs.twimg.com/media/Cxc3jvTXAAAGqYC.jpg:large" class="d-block w-100" alt="...">
-      </div>
+        @forelse ($portadas as $r)
+
+        <div class="carousel-item @if ($loop->index==0) active @endif">
+        <img height="500" src="/img/portadas/{{$r->urlfoto}}" class="d-block w-100" alt="{{$r->frase}}">
+          </div>
+        @empty
+        @endforelse
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

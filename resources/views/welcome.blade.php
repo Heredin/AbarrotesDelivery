@@ -28,7 +28,7 @@
         @forelse ($productos as $r)
         <div class="col-sm-3">
             <div class="card shadow">
-                <a href="/productos/{{$r->slug}}" title="{{$r->nombre}}">
+                <a href="/{{$r->slug}}" title="{{$r->nombre}}">
             <img src="/img/productos/{{$r->urlfoto}}" class="card-img-top" alt="Comprar {{$r->nombre}}">
                 </a>
             <div class="card-body">
@@ -41,7 +41,24 @@
         @empty
 <p>No hay productos</p>
         @endforelse
+<div class="col-sm-10 mt-5">
+    <h2>Novedades</h2>
 
-            </div>
+    @forelse ($blog as $r)
+    <div class="row mt-3 mb-3">
+<div class="col-sm-4">
+<a href="/blog/{{$r->slug}}"><img src="/img/publicaciones/{{$r->urlfoto}}" alt="{{$r->nombre}}" class="img-fluid"></a>
+</div>
+<div class="col-sm-8">
+<h3><a href="/blog/{{$r->slug}}">{{$r->nombre}}</a></h3>
+<p>{{$r->description}}</p>
+<p class="small">{{$r->created_at->diffForHumans()}}</p>
+</div>
+</div>
+     @empty
+<p>No hay publicaciones</p>
+     @endforelse
+
+</div>    </div>
         </div>
 @endsection

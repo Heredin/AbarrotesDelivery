@@ -69,6 +69,8 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'celular' => $data['celular'],
+            'direccion' => $data['direccion'],
             'password' => Hash::make($data['password']),
         ]);
         $user->roles()->attach(Role::where('name','cliente')->first());
@@ -76,7 +78,7 @@ class RegisterController extends Controller
     }
     protected function redirectTo(){
         if(Auth::user()->hasRole('cliente')){
-            return "/cliente/home";
+            return "/carrito/procesopedido";
         }
         return "/";
     }

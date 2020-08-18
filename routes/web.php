@@ -36,6 +36,7 @@ Route::group(['prefix'=>'admin','middleware'=>'role:admin'],function(){
 Route::post('/carrito/agregar','CarritoController@agregar')->name('carrito.agregar');
 Route::get('/carrito/checkout','CarritoController@checkout')->name('carrito.checkout');
 Route::post('/carrito/remover','CarritoController@remover')->name('carrito.remover');
+Route::get('/carrito/procesopedido','CarritoController@procesopedido')->name('carrito.procesopedido');
 Route::get('/carrito/vaciar','CarritoController@vaciar')->name('carrito.vaciar');
 Route::group(['prefix'=>'cliente','middleware'=>'role:cliente'],function(){
 

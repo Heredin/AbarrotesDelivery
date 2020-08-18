@@ -13,12 +13,16 @@
      </div>
 
         </div>
-        <div class="col-sm-4">
-            <a href="" class="btn btn-success">Comprar</a>
+        <div class="col-sm-5 text-center">
+
+            <form action="{{route('carrito.agregar')}}" method="post">
+                @csrf
+              <input type="hidden" name="id" value="{{$producto->id}}">
+              <input type="number" value="1"name="quantity" max="10" min="1" class="mt-1 mb-1">
+              <input type="submit" value="AGREGAR" class="btn btn-info   rounded-pill mx-auto d-block">
+            </form>
         </div>
-        <div class="col-sm-3">
-           Carrito
-        </div>
+        @include('front.resumen')
         <div class="col-sm-12">
             <h4 class="text-center">Productos que te pueden interesar</h4>
             <div class="row">
@@ -35,6 +39,8 @@
 </div>
             @endforelse
         </div>
+
+
         </div>
     </div>
 </div>

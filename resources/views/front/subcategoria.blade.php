@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="row justify-content-center">
             @forelse ($subcategoria->productos as $r)
-            <div class="col-sm-3 mt-5 mb-5">
+            <div class="col-sm-4 mt-5 mb-5">
                 <div class="card shadow">
                     <a href="/{{$r->slug}}" title="{{$r->nombre}}">
                 <img src="/img/productos/{{$r->urlfoto}}" class="card-img-top" alt="Comprar {{$r->nombre}}">
@@ -15,7 +15,13 @@
                     <p class="text-center">$. {{$r->precio}}</p></div>
                     <div class="card-footer">
                     <a href="/productos/{{$r->slug}}" class="btn btn-outline-success rounded-pill btn-block">{{$r->nombre}}</a>
-                    </div>
+                    <form action="{{route('carrito.agregar')}}" method="post">
+                        @csrf
+                      <input type="hidden" name="id" value="{{$r->id}}">
+                      <input type="number" value="1"name="quantity" max="10" min="1" class="mt-1 mb-1">
+                      <input type="submit" value="AGREGAR" class="btn btn-outline-secondary rounded-pill btn-block">
+                    </form>
+                </div>
                 </div>
             </div>
 
@@ -24,7 +30,7 @@
             @endforelse
             </div>
         </div>
-
+        @include('front.resumen')
         <div class="col-sm-10 mt-5">
             <h2>Novedades</h2>
 

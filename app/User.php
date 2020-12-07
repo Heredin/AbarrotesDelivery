@@ -5,8 +5,10 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use JWTAuth;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
@@ -33,9 +35,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-      //funcion que hace la relacion cone el modelo a relacionar
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+    public static function checkToken($token){
+        if($token->token)
+            return true;
+        return false;
+    }
+
+      //funcion que hace la relacion con el modelo a relacionar
   public function pedidos(){
-    return $this->belongsTo("App\Pedidos");
+    return $this->hasMany("App\Pedidos");
 }
 public function roles(){
     return $this->belongsToMany("App\Role");

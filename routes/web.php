@@ -41,5 +41,7 @@ Route::get('/carrito/vaciar','CarritoController@vaciar')->name('carrito.vaciar')
 Route::group(['prefix'=>'cliente','middleware'=>'role:cliente'],function(){
 
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
+
 });
 

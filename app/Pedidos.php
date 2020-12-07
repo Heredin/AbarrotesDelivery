@@ -16,6 +16,6 @@ class Pedidos extends Model
     }
 
     public function detalles(){
-        return $this->belongsTo("App\Detalles");
+        return $this->hasMany("App\Detalles");
     }
 }

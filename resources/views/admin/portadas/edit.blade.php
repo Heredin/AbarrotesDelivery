@@ -21,7 +21,7 @@
 
 <div class="row form-group">
 <img src="/img/portadas/{{$portada->urlfoto}}"class="img-fluid">
-    {!!Form::label('urlfoto','urlfoto') !!}
+    {!!Form::label('urlfoto','urlfoto',['class'=>'mr-2']) !!}
 
     {!!Form::file('urlfoto') !!}
 </div>

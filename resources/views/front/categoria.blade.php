@@ -22,10 +22,10 @@
             <div class="col-sm-3 mt-5 mb-5">
                 <div class="card shadow">
                     <a href="/{{$r->slug}}" title="{{$r->nombre}}">
-                <img src="/img/productos/{{$r->urlfoto}}" class="card-img-top" alt="Comprar {{$r->nombre}}">
+                <img src="/img/productos/{{$r->urlfoto}}" class="card-img-top imageHeight" alt="Comprar {{$r->nombre}}">
                     </a>
                 <div class="card-body">
-                    <p class="text-center">$. {{$r->precio}}</p></div>
+                    <p class="text-center">$ {{number_format($r->precio,2)}}</p></div>
                     <div class="card-footer text-center">
                     <a href="/{{$r->slug}}" class="btn btn-outline-success rounded-pill btn-block">{{$r->nombre}}</a>
                     <form action="{{route('carrito.agregar')}}" method="post">

@@ -40,13 +40,14 @@
 </div>
 <div class="row form-group">
 <img src="/img/categorias/{{$categoria->urlfoto}}">
-    {!!Form::label('urlfoto','urlfoto') !!}
+    {!!Form::label('urlfoto','urlfoto',['class'=>'mr-2']) !!}
 
     {!!Form::file('urlfoto') !!}
 </div>
             <div class="row form-group">
             <div class="col-sm-6">
-                {!!Form::checkbox('portada',null,$categoria->portada)!!}Portada<br>
+            {!!Form::label('portada','Portada',['class'=>'mr-2']) !!}
+                {!!Form::checkbox('portada',null,$categoria->portada)!!}<br>
 
         </div>
             <div class="col-sm-6">

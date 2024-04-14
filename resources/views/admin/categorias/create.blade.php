@@ -38,13 +38,14 @@
 </div>
 <div class="row form-group">
 
-    {!!Form::label('urlfoto','urlfoto') !!}
+    {!!Form::label('urlfoto','urlfoto',['class'=>'mr-2']) !!}
 
     {!!Form::file('urlfoto') !!}
 </div>
             <div class="row form-group">
             <div class="col-sm-6">
-                {!!Form::checkbox('portada',null)!!}Portada<br>
+            {!!Form::label('portada','Portada',['class'=>'mr-2']) !!}
+                {!!Form::checkbox('portada',null)!!}<br>
 
         </div>
             <div class="col-sm-6">
@@ -55,4 +56,8 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script>
+CKEDITOR.replace('descripcion');
+</script>
 @endsection

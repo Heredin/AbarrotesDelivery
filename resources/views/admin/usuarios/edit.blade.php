@@ -8,7 +8,8 @@
             {!!Form::open(['route'=>['admin.usuarios.update',$user],'method'=>'PUT'])!!}
             <div class="row form-group">
             <div class="col-sm-6">
-                {!!Form::checkbox('estado',null,$user->estado) !!} Activado <br>
+            {!!Form::label('estado','Activado',['class'=>'mr-2']) !!}
+                {!!Form::checkbox('estado',null,$user->estado) !!}<br>
 
         </div>
             <div class="col-sm-6">

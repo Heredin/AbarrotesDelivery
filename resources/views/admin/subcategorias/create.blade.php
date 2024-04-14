@@ -34,11 +34,11 @@
 
     {!!Form::label('descripcion','descripcion') !!}
 
-    {!!Form::text('descripcion',null,['class'=>'form-control']) !!}
+    {!!Form::textarea('descripcion',null,['class'=>'form-control']) !!}
 </div>
 <div class="row form-group">
 
-    {!!Form::label('urlfoto','urlfoto') !!}
+    {!!Form::label('urlfoto','urlfoto',['class'=>'mr-2']) !!}
 
     {!!Form::file('urlfoto') !!}
 </div>

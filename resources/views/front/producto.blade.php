@@ -7,7 +7,7 @@
             <h1 class=" text-center lead">{{$producto->nombre}}</h1>
 <img src="/img/productos/{{$producto->urlfoto}}" alt="{{$producto->nombre}}" class="img-fluid mx-auto d-block">
     <div class="text-center">
-    <span>$ {{$producto->precio}}</span>
+    <span>$ {{number_format($producto->precio,2)}}</span>
     <hr>
     {!!$producto->descripcion!!}
      </div>

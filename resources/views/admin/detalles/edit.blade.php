@@ -15,7 +15,8 @@
 
             <div class="row form-group">
             <div class="col-sm-6">
-                {!!Form::checkbox('estado',null,$pedido->estado)!!}Estado<br>
+            {!!Form::label('estado','Estado',['class'=>'mr-2']) !!}
+                {!!Form::checkbox('estado',null,$pedido->estado)!!}<br>
 
         </div>
             <div class="col-sm-6">

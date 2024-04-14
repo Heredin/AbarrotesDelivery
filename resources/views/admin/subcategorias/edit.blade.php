@@ -40,7 +40,7 @@
 </div>
 <div class="row form-group">
 <img src="/img/subcategorias/{{$subcategoria->urlfoto}}">
-    {!!Form::label('urlfoto','urlfoto') !!}
+    {!!Form::label('urlfoto','urlfoto',['class'=>'mr-2']) !!}
 
     {!!Form::file('urlfoto') !!}
 </div>
@@ -54,8 +54,4 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-<script>
-CKEDITOR.replace('descripcion');
-</script>
 @endsection

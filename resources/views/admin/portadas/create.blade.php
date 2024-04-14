@@ -21,13 +21,13 @@
 
          <div class="row form-group">
 
-        {!!Form::label('urlfoto','urlfoto') !!}
+        {!!Form::label('urlfoto','urlfoto',['class'=>'mr-2']) !!}
 
          {!!Form::file('urlfoto') !!}
       </div>
             <div class="row form-group">
-
-                {!!Form::checkbox('portada',null)!!}Portada<br>
+            {!!Form::label('portada','Portada',['class'=>'mr-2']) !!}
+                {!!Form::checkbox('portada',null)!!}<br>
         </div>
         <div class="row form-group">
 

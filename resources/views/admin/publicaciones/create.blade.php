@@ -29,10 +29,12 @@
         {!!Form::label('nombre','nombre') !!}
 
         {!!Form::text('nombre',null,['class'=>'form-control']) !!}
-</div>
+<br><br>
+{!!Form::label('descripcion','descripcion') !!}
+    </div>
 <div class="row form-group">
 
-    {!!Form::label('descripcion','descripcion') !!}
+    
 
     {!!Form::textarea('descripcion',null,['class'=>'form-control']) !!}
 </div>
@@ -44,7 +46,7 @@
 </div>
 <div class="row form-group">
 
-    {!!Form::label('urlfoto','urlfoto') !!}
+    {!!Form::label('urlfoto','urlfoto',['class'=>'mr-2']) !!}
 
     {!!Form::file('urlfoto') !!}
 </div>
@@ -58,4 +60,8 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script>
+CKEDITOR.replace('descripcion');
+</script>
 @endsection

@@ -40,7 +40,7 @@ class LoginController extends Controller
     public function edirectPath()
     {
     if(Auth::user()->hasRole('admin')){
-return "/admin/usuarios";
+           return "/admin/usuarios";
     }
     if(Auth::user()->hasRole('cliente')){
         return "/carrito/procesopedido";

@@ -63,7 +63,8 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
-            "chmod 777 -R public/img"
+            "chmod -R 0777  public/img",
+            "chown -R www-data:www-data public/"
           ]
     }
 }

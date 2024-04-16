@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center align-items-center">
         <div class="col-sm-4">
-            <h1 class=" text-center lead">{{$producto->nombre}}</h1>
+            <h1 class="text-center lead">{{$producto->nombre}}</h1>
 <img src="/img/productos/{{$producto->urlfoto}}" alt="{{$producto->nombre}}" class="img-fluid mx-auto d-block">
     <div class="text-center">
     <span>$ {{number_format($producto->precio,2)}}</span>
@@ -26,11 +26,11 @@
         <div class="col-sm-12">
             <h4 class="text-center">Productos que te pueden interesar</h4>
             <div class="row">
-            @forelse ($productos as $r)
+            @forelse ($productos as $pro)
 .     <div class="col-sm-3">
-<a href="/{{$r->slug}}">
-    <img src="/img/productos/{{$producto->urlfoto}}" alt="{{$producto->nombre}}" class="img-fluid mx-auto d-block">
-        <p>{{$producto->nombre}}</p>
+<a href="/{{$pro->slug}}">
+    <img src="/img/productos/{{$pro->urlfoto}}" alt="{{$pro->nombre}}" class="img-fluid imageHeight mx-auto d-block">
+        <p class="text-center">{{$pro->nombre}}</p>
     </a>
        </div>
             @empty

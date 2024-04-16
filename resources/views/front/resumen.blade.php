@@ -4,7 +4,7 @@
 @foreach (Cart::getContent() as $item)
 <small>{{$item->name}}...{{$item->price}}</small>
 @endforeach
-Total $. {{number_format(Cart::getSubTotal(),2)}}
+Total $ {{number_format(Cart::getSubTotal(),2)}}
 <a href="/carrito/checkout" class="btn btn-success"> Ver carrito</a>
 @else
 <P>Carrito vacío</P>

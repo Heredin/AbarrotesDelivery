@@ -19,7 +19,7 @@
         <div class="col-md-8">
             <div class="row justify-content-center">
             @forelse ($productos as $r)
-            <div class="col-sm-3 mt-5 mb-5">
+            <div class="col-sm-4 mt-5 mb-5">
                 <div class="card shadow">
                     <a href="/{{$r->slug}}" title="{{$r->nombre}}">
                 <img src="/img/productos/{{$r->urlfoto}}" class="card-img-top imageHeight" alt="Comprar {{$r->nombre}}">

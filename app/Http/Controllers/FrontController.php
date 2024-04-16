@@ -33,9 +33,10 @@ class FrontController extends Controller
 
     public function producto($producto)
     {
-        $producto = Productos::whereSlug($producto)->first();
-        $productos = Productos::whereSubcategorias_id($producto->subcategorias_id);
-        return view('front.producto', compact('producto', 'productos'));
+       $producto = Productos::whereSlug($producto)->first();
+       // $productos = Productos::whereSubcategorias_id($producto->subcategorias_id);
+       $productos = Productos::with('subcategorias')->whereNotIn('id', [$producto->id])->get();
+       return view('front.producto', compact('producto', 'productos'));
     }
 
     public function publicacion($slug)
